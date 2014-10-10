@@ -1,0 +1,31 @@
+#!/usr/bin/env node
+var debug = require('debug')('hackathon');
+var app = require('../app');
+
+
+app.set('port', process.env.PORT || 3000);
+
+var server = app.listen(app.get('port'), function () {
+    debug('Express server listening on port ' + server.address().port);
+});
+var io = require('socket.io')(server);
+io.on('connection', function (socket) {
+    socket.emit('news', { id: socket.id });
+    socket.on('device connect', function (data) {
+        var sockets = this.nsp.sockets;
+        for (var i = 0, l = sockets.length; i < l; i++) {
+            if (sockets[i].id == data.id) {
+                sockets[i].emit('device connect');
+            }
+        }
+    });
+    socket.on('action', function (data) {
+        var sockets = this.nsp.sockets;
+        for (var i = 0, l = sockets.length; i < l; i++) {
+            if (sockets[i].id == data.id) {
+                sockets[i].emit('action', data.action);
+                console.log(data.action);
+            }
+        }
+    })
+});

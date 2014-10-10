@@ -1,0 +1,182 @@
+@import "normalize";
+
+html, body {
+  background: #ffffff;
+  -webkit-user-select: none;
+  -webkit-text-size-adjust: none;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-size: 14px;
+  color: #666;
+}
+
+a {
+  color: #69c;
+}
+
+p {
+  margin: 5px 5px;
+  line-height: 150%;
+}
+
+.screen {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  img {
+    max-width: 100%;
+  }
+  .qrcode {
+    border: 20px solid #FFF;
+    background: #FFF;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+  }
+}
+
+.action-box {
+  box-sizing: border-box;
+  margin: 15px;
+  padding: 10px;
+  overflow: hidden;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.light {
+  display: inline-block;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  color: #d3d3d3;
+  font-size: 12px;
+}
+
+.light b {
+  display: block;
+  width: 60px;
+  height: 50px;
+  background: image-url('ico.png', false) no-repeat;
+  background-size: 200px;
+  pointer-events: none;
+}
+
+.light .reset {
+  background: none;
+  width: 60px;
+  font-size: 50px;
+}
+
+.light .headlight {
+  background-position: 5px -100px;
+}
+
+.light .highlight {
+  background-position: -58px -100px;
+}
+
+.light .widthlamp {
+  background-position: -118px -100px;
+  width: 75px;
+}
+
+.light .emergency {
+  background-position: -112px -150px;
+  width: 50px;
+}
+
+.light .right {
+  background-position: -45px -150px;
+}
+
+.light .left {
+  background-position: 10px -150px;
+}
+
+.light-on .headlight {
+  background-position: 5px 0;
+}
+
+.light-on .highlight {
+  background-position: -58px 0;
+}
+
+.light-on .widthlamp {
+  background-position: -118px 0;
+}
+
+.light-on .emergency {
+  background-position: -112px -50px;
+}
+
+.light-on .right {
+  background-position: -45px -50px;
+}
+
+.light-on .left {
+  background-position: 10px -50px;
+}
+
+.g-notice {
+  width: 100%;
+  min-height: 35px;
+  padding: 10px;
+  background: #ffd;
+  opacity: 0;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 100001;
+  -webkit-transform: translate3d(0, -45px, 0);
+  -webkit-transition: all 0.5s;
+}
+
+.g-notice, .g-notice div {
+  box-sizing: border-box;
+}
+
+.g-notice-fixed {
+  position: fixed;
+}
+
+.g-notice-close {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #999;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.g-notice-on {
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0, 0);
+}
+
+.g-notice-ltr {
+  text-align: left;
+}
+
+.g-notice-err {
+  background: #fdd;
+}
+
+.g-notice-suc {
+  background: #efe;
+}
+
+.g-notice-msg {
+  font-size: 0.9rem;
+  color: #404040;
+}
+
