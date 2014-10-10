@@ -1,5 +1,5 @@
 var id = window.location.hash.substr(1);
-var socket = io.connect('http://10.5.16.17');
+var socket = io.connect('http://localhost');
 socket.on('news', function (data) {
     socket.emit('device connect', {id: id});
 })
@@ -191,6 +191,7 @@ var Exam = {
     //操作 相应点击操作
     operation: function (key) {
         this.socket.emit('action', {id: this.id, action: key});
+        this.answer = this.answer || [];
         this.answer.push(this.map[key]);
         return this;
     },

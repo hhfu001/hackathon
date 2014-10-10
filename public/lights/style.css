@@ -1,0 +1,13 @@
+body{ text-align: center; background: #000;}
+.cars{ margin: 0 auto; position: relative; height: 726px; background: url(/images/default.png) center 0 no-repeat; background-size:1366px 726px;}
+.lights,
+.signal{height: 726px; width: 100%; background-size: 1336px 726px; background-position: center 2px; background-repeat: no-repeat;}
+.signal{position: absolute; z-index: 2; top: 0; left: 0;}
+
+.headlight{ background-image: url(/images/headlight.png);}
+.highlight{ background-image: url(/images/highlight.png);}
+.widthlamp{ background-image: url(/images/widthlamp.png);}
+.emergency{ background-image: url(/images/emergency.png);}
+.left{ background-image: url(/images/left.png);}
+.right{ background-image: url(/images/right.png);}
+

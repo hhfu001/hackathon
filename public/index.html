@@ -6,10 +6,22 @@
     <meta name="viewport"
           content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
     <link rel="stylesheet" href="/stylesheets/main.css"/>
+    <link rel="stylesheet" href="/lights/style.css"/>
 </head>
 <body>
 <div class="screen">
-    <img src="/images/default.png" alt=""/>
+    <div class="cars">
+        <div class="lights" id="lights"></div>
+        <div class="signal" id="signal"></div>
+    </div>
+
+    
+    <i class="headlight"></i>
+    <i class="highlight"></i>
+    <i class="widthlamp"></i>
+    <i class="emergency"></i>
+    <i class="right"></i>
+    <i class="left"></i>
 
     <div class="qrcode"></div>
 </div>
@@ -18,6 +30,8 @@
 <script src="/vendor/backbone.js"></script>
 <script src="/vendor/qrcode.min.js"></script>
 <script src="/socket.io/socket.io.js"></script>
+<script src="/lights/lights.js"></script>
 <script src="/javascripts/screen.js"></script>
+<script src="/lights/car.js"></script>
 </body>
 </html>
