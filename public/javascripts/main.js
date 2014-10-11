@@ -196,7 +196,7 @@ var Exam = {
         this.socket.emit('action', {id: this.id, action: key});
         this.answer = this.answer || [];
         this.answer.push(this.map[key]);
-        console.log(this.answer);
+        //console.log(this.answer);
         return this;
     },
     //核对答案
@@ -286,7 +286,7 @@ Exam.on('fail', function (question) {
 });
 $('#btn-1').click(function () {
     $('.page2').css({top: 0});
-    Exam.load(_.random(0)).start();
+    Exam.load(_.random(0, 4)).start();
 });
 $('#btn-2').click(function () {
     Exam.freedom = true;
@@ -342,10 +342,13 @@ $('.btns1 .btn').click(function (e) {
 
       if(val == 'highlight'){
             val = 'headlight';
-
+            me.removeClass('btn_highlight').addClass('btn_headlight');
             me.attr('data-value', val).html('<i class="active"></i>近光灯');
+            
         }else if(val == 'headlight'){
             val = 'highlight';
+
+            me.removeClass('btn_headlight').addClass('btn_highlight');
             me.attr('data-value', val).html('<i class="active"></i>远光灯');
         }  
     }

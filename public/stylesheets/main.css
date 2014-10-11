@@ -485,7 +485,11 @@ body{ position: relative;}
 .content{ width: 300px; height: 100%; margin: 10px auto; position: relative;  }
 
 .page .btn{ margin: 0 10px; padding: 0; border: none; background: #f60; color: #fff;}
-.page1 .btn{ margin: 200px auto; padding: 20px; font-size: 24px; border-radius: 3px;}
+.page1 .btn{ margin: 20px auto; padding: 20px; font-size: 24px; border-radius: 3px;}
+.page1{ padding: 100px 0;}
+
+
+
 .page2{ top: -9999px; text-align: left; transition: top 1s; z-index: 2;}
 .page2 .btn{ display: inline-block; margin-bottom: 10px; padding: 3px 10px; background:none; color: #444; border-radius: 5px; color: #444;}
 
