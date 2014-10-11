@@ -7,7 +7,13 @@ body{ text-align: center; background: #000;}
 .headlight{ background-image: url(/images/headlight.png);}
 .highlight{ background-image: url(/images/highlight.png);}
 .widthlamp{ background-image: url(/images/widthlamp.png);}
-.emergency{ background-image: url(/images/emergency.png);}
-.left{ background-image: url(/images/left.png);}
-.right{ background-image: url(/images/right.png);}
+.emergency{ background-image: url(/images/emergency.png); -webkit-animation: flashing .5s ease 0 infinite alternate;}
+.left{ background-image: url(/images/left.png);-webkit-animation: flashing .5s ease 0 infinite alternate;}
+.right{ background-image: url(/images/right.png);-webkit-animation: flashing .5s ease 0 infinite alternate;}
+
+
+@-webkit-keyframes flashing{
+	0% { opacity: 0;}
+	100% { opacity: 1;}
+}
 
