@@ -43,8 +43,10 @@ io.on('connection', function (socket) {
             var screenSocket = _.find(sockets, function (s) {
                 return s.signedId == deviceID;
             });
-            screenSocket.signed = false;
-            screenSocket.emit('usable', {id: screenSocket.id});
+            if (screenSocket) {
+                screenSocket.signed = false;
+                screenSocket.emit('usable', {id: screenSocket.id});
+            }
         }
     });
 });

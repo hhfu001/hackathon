@@ -1,5 +1,5 @@
 var id = window.location.hash.substr(1);
-var socket = io.connect('http://10.5.16.177');
+var socket = io.connect('http://10.5.16.17');
 socket.on('news', function (data) {
     socket.emit('device', {id: id});
 });
@@ -135,6 +135,7 @@ var papers = [
     ]
 ];
 var Exam = {
+    freedom: true,
     initialize: function () {
         var model = this;
         this.on('next', this.next);
@@ -231,9 +232,6 @@ _.extend(Exam, Backbone.Events, {
     id: id
 });
 Exam.initialize();
-Exam.on('fail', function (action) {
-    alert(action.name);
-});
 socket.on('connect success', function () {
     //Exam.load(_.random(0, 4)).start();
 });
@@ -244,9 +242,42 @@ socket.on('signed', function () {
 $('.page2 .btn').click(function (e) {
     Exam.operation(this.dataset.value);
 });
+Exam.on('examstart', function () {
+    noty({
+        text: '开始考试',
+        type: 'success',
+        dismissQueue: true,
+        layout: 'bottomRight',
+        theme: 'defaultTheme',
+        maxVisible: 10,
+        timeout: 1000
+    });
+});
+Exam.on('question', function (question) {
+    if (Exam.freedom) {
+        noty({
+            text: question.answer,
+            type: 'information',
+            dismissQueue: true,
+            layout: 'bottomRight',
+            theme: 'defaultTheme',
+            maxVisible: 10,
+            timeout: question.timeout * 1000 - 200
+        });
+    }
 
-
-$('#btn-1').click(function(){
+});
+Exam.on('fail', function (question) {
+    noty({
+        text: question.name + ' 操作错误!!',
+        type: 'error',
+        dismissQueue: true,
+        layout: 'bottomRight',
+        theme: 'defaultTheme',
+        maxVisible: 10
+    });
+});
+$('#btn-1').click(function () {
     $('.page2').css({top: 0});
     Exam.load(_.random(0, 4)).start();
 });
