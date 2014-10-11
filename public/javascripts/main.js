@@ -222,6 +222,10 @@ var Exam = {
         question = _.extend({}, question, paper[step]);
         this.trigger('fail', question);
         this.socket.emit('fail', { question: question, id: this.id });
+        if(this.freedom){
+            this.next();
+        }
+
     }
 };
 _.extend(Exam, Backbone.Events, {
@@ -312,9 +316,9 @@ $('.btns2 .btn').click(function (e) {
     icons.removeClass('active');
     me.find('i')[me.find('i').hasClass('active')? 'removeClass' : 'addClass']('active');
 
-    if(me.index() == 0 || me.index() == 1){
-        Exam.operation('reset');
-    }
+    // if(me.index() == 0 || me.index() == 2){
+    //     Exam.operation('reset');
+    // }
     Exam.operation(val);
 
 });
