@@ -135,7 +135,7 @@ var papers = [
     ]
 ];
 var Exam = {
-    freedom: true,
+    freedom: false,
     initialize: function () {
         var model = this;
         this.on('next', this.next);
@@ -233,25 +233,29 @@ _.extend(Exam, Backbone.Events, {
 });
 Exam.initialize();
 socket.on('connect success', function () {
-    //Exam.load(_.random(0, 4)).start();
-});
-socket.on('signed', function () {
-    alert('该宝马是别人的啦！！');
-});
-
-$('.page2 .btn').click(function (e) {
-    Exam.operation(this.dataset.value);
-});
-Exam.on('examstart', function () {
     noty({
-        text: '开始考试',
+        text: '你已经上车！',
         type: 'success',
         dismissQueue: true,
         layout: 'bottomRight',
         theme: 'defaultTheme',
         maxVisible: 10,
-        timeout: 1000
+        timeout: 2000
     });
+});
+socket.on('signed', function () {
+    noty({
+        text: '该车已经有人操作！！',
+        type: 'information',
+        dismissQueue: true,
+        layout: 'bottomRight',
+        theme: 'defaultTheme',
+        maxVisible: 10
+    });
+});
+
+$('.page2 .btn').click(function (e) {
+    Exam.operation(this.dataset.value);
 });
 Exam.on('question', function (question) {
     if (Exam.freedom) {
