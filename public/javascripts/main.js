@@ -1,7 +1,7 @@
 var id = window.location.hash.substr(1);
-var socket = io.connect('http://10.5.16.177');
+var socket = io.connect('http://10.5.16.17');
 socket.on('news', function (data) {
-    socket.emit('device connect', {id: id});
+    socket.emit('device', {id: id});
 });
 var voice = new Howl({
     src: '/light-action.mp3',
@@ -74,64 +74,64 @@ var actions = [
 ];
 var papers = [
     [
-        { id: 0, value: [1] },
-        { id: 1, value: [2, 2] },
-        { id: 2, value: [] },
-        { id: 3, value: [2] },
-        { id: 4, value: [2, 32] },
-        { id: 5, value: [64, 16] },
-        { id: 6, value: [64, 32, 2, 2, 64, 16, 64] },
-        { id: 7, value: [4, 8] },
-        { id: 8, value: [8, 1] },
-        { id: 9, value: [2, 2] }
+        { id: 0, value: [1], answer: '开启近光灯'},
+        { id: 1, value: [2, 2], answer: '交替使用远近光灯'},
+        { id: 2, value: [], answer: '近光灯'},
+        { id: 3, value: [2], answer: '远光灯'},
+        { id: 4, value: [2, 32], answer: '近光灯，左转向灯'},
+        { id: 5, value: [64, 16], answer: '近光灯，右转向灯'},
+        { id: 6, value: [64, 32, 2, 2, 64, 16, 64], answer: '先向左打方向灯，再交替使用远近光灯，再向右打方向灯，最后将方向灯回归原位'},
+        { id: 7, value: [4, 8], answer: '打开示宽灯，并开启危险报警闪光灯' },
+        { id: 8, value: [8, 1], answer: '近光灯'},
+        { id: 9, value: [2, 2], answer: '交替使用远近光灯'}
     ],
     [
-        { id: 0, value: [1] },
-        { id: 2, value: [] },
-        { id: 1, value: [2, 2] },
-        { id: 3, value: [2] },
-        { id: 6, value: [2, 32, 2, 2, 64, 16, 64] },
-        { id: 4, value: [32] },
-        { id: 5, value: [64, 16] },
-        { id: 7, value: [64, 4, 8] },
-        { id: 9, value: [8, 1, 2, 2] },
-        { id: 8, value: [] }
+        { id: 0, value: [1], answer: '开启近光灯' },
+        { id: 2, value: [], answer: '近光灯' },
+        { id: 1, value: [2, 2], answer: '交替使用远近光灯'},
+        { id: 3, value: [2], answer: '远光灯'},
+        { id: 6, value: [2, 32, 2, 2, 64, 16, 64], answer: '先向左打方向灯，再交替使用远近光灯，再向右打方向灯，最后将方向灯回归原位'},
+        { id: 4, value: [32], answer: '近光灯，左转向灯' },
+        { id: 5, value: [64, 16], answer: '近光灯，右转向灯'},
+        { id: 7, value: [64, 4, 8], answer: '打开示宽灯，并开启危险报警闪光灯' },
+        { id: 9, value: [8, 1, 2, 2], answer: '交替使用远近光灯' },
+        { id: 8, value: [], answer: '近光灯' }
     ],
     [
-        { id: 0, value: [1] },
-        { id: 9, value: [2, 2] },
-        { id: 8, value: [] },
-        { id: 7, value: [4, 8] },
-        { id: 6, value: [8, 1, 32, 2, 2, 64, 16, 64] },
-        { id: 5, value: [16] },
-        { id: 4, value: [64, 32] },
-        { id: 3, value: [64, 2] },
-        { id: 2, value: [2] },
-        { id: 1, value: [2, 2] }
+        { id: 0, value: [1], answer: '开启近光灯' },
+        { id: 9, value: [2, 2], answer: '交替使用远近光灯' },
+        { id: 8, value: [], answer: '近光灯' },
+        { id: 7, value: [4, 8], answer: '打开示宽灯，并开启危险报警闪光灯' },
+        { id: 6, value: [8, 1, 32, 2, 2, 64, 16, 64], answer: '先向左打方向灯，再交替使用远近光灯，再向右打方向灯，最后将方向灯回归原位' },
+        { id: 5, value: [16], answer: '近关灯，右转向灯' },
+        { id: 4, value: [64, 32], answer: '近光灯，左转向灯' },
+        { id: 3, value: [64, 2], answer: '远光灯' },
+        { id: 2, value: [2], answer: '近光灯' },
+        { id: 1, value: [2, 2], answer: '交替使用远近光灯'}
     ],
     [
-        { id: 0, value: [1] },
-        { id: 7, value: [4, 8] },
-        { id: 3, value: [8, 1, 2] },
-        { id: 6, value: [2, 32, 2, 2, 64, 16, 64] },
-        { id: 1, value: [2, 2] },
-        { id: 8, value: [] },
-        { id: 2, value: [] },
-        { id: 9, value: [2, 2] },
-        { id: 5, value: [16] },
-        { id: 4, value: [64, 32] }
+        { id: 0, value: [1], answer: '开启近光灯' },
+        { id: 7, value: [4, 8], answer: '打开示宽灯，并开启危险报警闪光灯' },
+        { id: 3, value: [8, 1, 2], answer: '远光灯' },
+        { id: 6, value: [2, 32, 2, 2, 64, 16, 64], answer: '先向左打方向灯，再交替使用远近光灯，再向右打方向灯，最后将方向灯回归原位'},
+        { id: 1, value: [2, 2], answer: '交替使用远近光灯' },
+        { id: 8, value: [], answer: '近光灯'},
+        { id: 2, value: [], answer: '近光灯'},
+        { id: 9, value: [2, 2], answer: '交替使用远近光灯'},
+        { id: 5, value: [16], answer: '近关灯，右转向灯'},
+        { id: 4, value: [64, 32], answer: '近光灯，左转向灯' }
     ],
     [
-        { id: 0, value: [1] },
-        { id: 5, value: [16] },
-        { id: 9, value: [64, 2, 2] },
-        { id: 7, value: [4, 8] },
-        { id: 3, value: [8, 1, 2] },
-        { id: 6, value: [2, 32, 2, 2, 64, 16, 64] },
-        { id: 8, value: [] },
-        { id: 1, value: [2, 2] },
-        { id: 4, value: [32] },
-        { id: 2, value: [64] }
+        { id: 0, value: [1], answer: '开启近光灯'},
+        { id: 5, value: [16], answer: '近关灯，右转向灯'},
+        { id: 9, value: [64, 2, 2], answer: '交替使用远近光灯'},
+        { id: 7, value: [4, 8], answer: '打开示宽灯，并开启危险报警闪光灯'},
+        { id: 3, value: [8, 1, 2], answer: '远光灯'},
+        { id: 6, value: [2, 32, 2, 2, 64, 16, 64], answer: '先向左打方向灯，再交替使用远近光灯，再向右打方向灯，最后将方向灯回归原位'},
+        { id: 8, value: [], answer: '近光灯'},
+        { id: 1, value: [2, 2], answer: '交替使用远近光灯' },
+        { id: 4, value: [32], answer: '近光灯，左转向灯' },
+        { id: 2, value: [64], answer: '近光灯'}
     ]
 ];
 var Exam = {
@@ -141,15 +141,16 @@ var Exam = {
         this.on('success', function () {
             this.voice.play('e')
         }, this);
-        this.on('action', function (action, vid) {
+        this.on('question', function (question, vid) {
             this.voice.play(vid);
+            alert(question.answer);
             setTimeout(function () {
                 if (model.check()) {
                     model.next();
                 } else {
                     model.fail();
                 }
-            }, action.timeout * 1e3);
+            }, question.timeout * 1e3);
         });
     },
     //载入试卷
@@ -161,6 +162,7 @@ var Exam = {
     start: function () {
         var model = this;
         this.step = -1;
+        //event  examstart
         this.trigger('examstart', this);
         this.socket.emit('examstart');
         this.voice.play('s');
@@ -181,9 +183,10 @@ var Exam = {
         }
         //下一题
         var current = paper[step].id;
-        var action = this.actions[current];
-        var vid = "v" + current;
-        this.trigger('action', action, vid);
+        var question = this.actions[current];
+        question = _.extend({}, question, paper[step]);
+        // event question e.name e.vid
+        this.trigger('question', question, "v" + current);
         this.answer = [];
         return this;
     },
@@ -204,6 +207,7 @@ var Exam = {
     },
     //考试通过
     success: function () {
+        //event success
         this.trigger('success');
         this.socket.emit('success', {id: this.id})
     },
@@ -212,12 +216,10 @@ var Exam = {
         var paper = this.papers[this.index];
         var step = this.step;
         var current = paper[step].id;
-        var action = this.actions[current];
-        this.trigger('fail', action);
-        this.socket.emit('fail', {
-            action: action,
-            id: this.id
-        });
+        var question = this.actions[current];
+        question = _.extend({}, question, paper[step]);
+        this.trigger('fail', question);
+        this.socket.emit('fail', { question: question, id: this.id });
     }
 };
 _.extend(Exam, Backbone.Events, {
