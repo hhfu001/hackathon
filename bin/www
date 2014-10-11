@@ -15,7 +15,8 @@ io.on('connection', function (socket) {
     socket.emit('news');
     socket.on('screen', function () {
         this.signed = false;
-        this.emit('reply', {id: socket.id});
+        this.TYPE = 'screen';
+        this.emit('usable', {id: socket.id});
     });
     socket.on('device', function (data) {
         var screenSocket = _.find(sockets, function (s) {
@@ -23,6 +24,8 @@ io.on('connection', function (socket) {
         });
         if (screenSocket && !screenSocket.signed) {
             screenSocket.signed = true;
+            screenSocket.signedId = this.id;
+            this.TYPE = 'device';
             this.emit('connect success');
             screenSocket.emit('connect success');
         } else {
@@ -35,6 +38,16 @@ io.on('connection', function (socket) {
         });
         if (screenSocket) {
             screenSocket.emit('action', data.action);
+        }
+    });
+    socket.on('disconnect', function () {
+        var deviceID = this.id;
+        if (this.TYPE == 'device') {
+            var screenSocket = _.find(sockets, function (s) {
+                return s.signedId == deviceID;
+            });
+            screenSocket.signed = false;
+            screenSocket.emit('usable', {id: screenSocket.id});
         }
     });
 });
