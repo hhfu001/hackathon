@@ -479,9 +479,42 @@ p {
 }
 
 body{ position: relative;}
-.page{ position: absolute; left: 0; top: 0; width: 100%; height: 100%; text-align: center; background: #fff;}
-.page2{ top: 0;}
+
+.page{ position: absolute; left: 0; top: 0; width: 100%;  height: 100%; text-align: center; background: #fff;}
+
+.content{ width: 300px; height: 100%; margin: 10px auto; position: relative;  }
 
 .page .btn{ margin: 0 10px; padding: 0; border: none; background: #f60; color: #fff;}
-.page1 .btn{ margin: 250px auto; padding: 20px; font-size: 24px; border-radius: 3px;}
-.page2 .btn{ height: 50px; width: 100px; background: url('/images/ico.png') 0 0 no-repeat;}
+.page1 .btn{ margin: 200px auto; padding: 20px; font-size: 24px; border-radius: 3px;}
+.page2{ top: -9999px; text-align: left; transition: top 1s; z-index: 2;}
+.page2 .btn{ display: inline-block; margin-bottom: 10px; padding: 3px 10px; background:none; color: #444; border-radius: 5px; color: #444;}
+
+.page2 .btn i{ display: block; margin: 0 auto 10px; width: 50px; height: 35px; background:url('/images/ico.png') 0 0 no-repeat; background-size: 200px;}
+.page2 .btns2{ float: left; width: 150px;}
+.page2 .btns3{ float: left; width: 120px;}
+
+.page2 .btn_headlight i{ background-position: 0 -109px;}
+.page2 .btn_headlight_active i{ background-position: 0 -9px;}
+
+
+.page2 .btn_highlight i{ background-position: -63px -109px;}
+.page2 .btn_highlight_active i{ background-position: -63px -9px;}
+
+.page2 .btn_widthlamp i{ width: 70px; background-position: -116px -109px;}
+.page2 .btn_widthlamp_active i{ width: 70px; background-position: -116px -9px;}
+
+.page2 .btn_right i{ background-position: -52px -157px;}
+.page2 .btn_right_active i{ background-position: -52px -57px;}
+
+.page2 .btn_left i{ background-position: 0 -157px;}
+.page2 .btn_left_active i{ background-position: 0 -57px;}
+
+.page2 .btn_reset i{ margin-top: 10px; background:#ccc; height: 10px;}
+.page2 .btn_reset_active i{ margin-top: 10px; background:#f60; height: 10px;}
+
+.page2 .btn_emergency i{ background-position: -115px -157px;}
+.page2 .btn_emergency_active i{ background-position: -115px -57px;}
+
+.page2 .btns1{ border-bottom: 1px solid #eee; margin-bottom: 10px;}
+.page2 .btns2{ border-right: 1px solid #eee; }
+

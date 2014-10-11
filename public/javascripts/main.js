@@ -1,7 +1,7 @@
 var id = window.location.hash.substr(1);
 var socket = io.connect('http://10.5.16.177');
 socket.on('news', function (data) {
-    socket.emit('device connect', {id: id});
+    socket.emit('device', {id: id});
 });
 var voice = new Howl({
     src: '/light-action.mp3',
@@ -233,11 +233,20 @@ Exam.on('fail', function (action) {
     alert(action.name);
 });
 socket.on('connect success', function () {
-    Exam.load(_.random(0, 4)).start();
+    //Exam.load(_.random(0, 4)).start();
 });
 socket.on('signed', function () {
     alert('该宝马是别人的啦！！');
 });
-$('.btn').click(function (e) {
+
+$('.page2 .btn').click(function (e) {
     Exam.operation(this.dataset.value);
 });
+
+
+$('#btn-1').click(function(){
+    $('.page2').css({top: 0});
+    Exam.load(_.random(0, 4)).start();
+});
+
+
