@@ -37,11 +37,15 @@ $(function() {
 			$lights[$lights.hasClass('widthlamp') ? 'removeClass' : 'addClass']('widthlamp');
 		},
 
+		closelamp: function(){
+			$lights.removeClass('headlight highLight widthlamp');
+		},
+
 		left: function() {
 			//
 			this.reset();
 
-			$signal[$signal.hasClass('left') ? 'removeClass' : 'addClass']('left');
+			$signal.addClass('left');
 
 		},
 
@@ -49,13 +53,11 @@ $(function() {
 			//
 			this.reset();
 
-			$signal[$signal.hasClass('right') ? 'removeClass' : 'addClass']('right');
-
+			$signal.addClass('right');
 
 		},
 		
 		emergency: function() {
-			//this.reset();
 
 			$signal[$signal.hasClass('emergency') ? 'removeClass' : 'addClass']('emergency');
 

@@ -518,3 +518,6 @@ body{ position: relative;}
 .page2 .btns1{ border-bottom: 1px solid #eee; margin-bottom: 10px;}
 .page2 .btns2{ border-right: 1px solid #eee; }
 
+.page2 .btn_closelamp i{ width: 22px; background-position: -133px -109px;}
+.page2 .btn_closelamp .active{ background-position: -133px -9px;}
+

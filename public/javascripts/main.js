@@ -75,61 +75,61 @@ var actions = [
 var papers = [
     [
         { id: 0, value: [1], answer: '开启近光灯'},
-        { id: 1, value: [2, 2], answer: '交替使用远近光灯'},
+        { id: 1, value: [2, 1], answer: '交替使用远近光灯'},
         { id: 2, value: [], answer: '近光灯'},
         { id: 3, value: [2], answer: '远光灯'},
-        { id: 4, value: [2, 32], answer: '近光灯，左转向灯'},
+        { id: 4, value: [1, 32], answer: '近光灯，左转向灯'},
         { id: 5, value: [64, 16], answer: '近光灯，右转向灯'},
-        { id: 6, value: [64, 32, 2, 2, 64, 16, 64], answer: '先向左打方向灯，再交替使用远近光灯，再向右打方向灯，最后将方向灯回归原位'},
+        { id: 6, value: [64, 32, 2, 1, 64, 16, 64], answer: '先向左打方向灯，再交替使用远近光灯，再向右打方向灯，最后将方向灯回归原位'},
         { id: 7, value: [4, 8], answer: '打开示宽灯，并开启危险报警闪光灯' },
         { id: 8, value: [8, 1], answer: '近光灯'},
-        { id: 9, value: [2, 2], answer: '交替使用远近光灯'}
+        { id: 9, value: [2, 1], answer: '交替使用远近光灯'}
     ],
     [
         { id: 0, value: [1], answer: '开启近光灯' },
         { id: 2, value: [], answer: '近光灯' },
-        { id: 1, value: [2, 2], answer: '交替使用远近光灯'},
+        { id: 1, value: [2, 1], answer: '交替使用远近光灯'},
         { id: 3, value: [2], answer: '远光灯'},
-        { id: 6, value: [2, 32, 2, 2, 64, 16, 64], answer: '先向左打方向灯，再交替使用远近光灯，再向右打方向灯，最后将方向灯回归原位'},
+        { id: 6, value: [1, 32, 2, 1, 64, 16, 64], answer: '先向左打方向灯，再交替使用远近光灯，再向右打方向灯，最后将方向灯回归原位'},
         { id: 4, value: [32], answer: '近光灯，左转向灯' },
         { id: 5, value: [64, 16], answer: '近光灯，右转向灯'},
         { id: 7, value: [64, 4, 8], answer: '打开示宽灯，并开启危险报警闪光灯' },
-        { id: 9, value: [8, 1, 2, 2], answer: '交替使用远近光灯' },
+        { id: 9, value: [8, 1, 2, 1], answer: '交替使用远近光灯' },
         { id: 8, value: [], answer: '近光灯' }
     ],
     [
         { id: 0, value: [1], answer: '开启近光灯' },
-        { id: 9, value: [2, 2], answer: '交替使用远近光灯' },
+        { id: 9, value: [2, 1], answer: '交替使用远近光灯' },
         { id: 8, value: [], answer: '近光灯' },
         { id: 7, value: [4, 8], answer: '打开示宽灯，并开启危险报警闪光灯' },
-        { id: 6, value: [8, 1, 32, 2, 2, 64, 16, 64], answer: '先向左打方向灯，再交替使用远近光灯，再向右打方向灯，最后将方向灯回归原位' },
+        { id: 6, value: [8, 1, 32, 2, 1, 64, 16, 64], answer: '先向左打方向灯，再交替使用远近光灯，再向右打方向灯，最后将方向灯回归原位' },
         { id: 5, value: [16], answer: '近关灯，右转向灯' },
         { id: 4, value: [64, 32], answer: '近光灯，左转向灯' },
         { id: 3, value: [64, 2], answer: '远光灯' },
-        { id: 2, value: [2], answer: '近光灯' },
-        { id: 1, value: [2, 2], answer: '交替使用远近光灯'}
+        { id: 2, value: [1], answer: '近光灯' },
+        { id: 1, value: [2, 1], answer: '交替使用远近光灯'}
     ],
     [
         { id: 0, value: [1], answer: '开启近光灯' },
         { id: 7, value: [4, 8], answer: '打开示宽灯，并开启危险报警闪光灯' },
         { id: 3, value: [8, 1, 2], answer: '远光灯' },
-        { id: 6, value: [2, 32, 2, 2, 64, 16, 64], answer: '先向左打方向灯，再交替使用远近光灯，再向右打方向灯，最后将方向灯回归原位'},
-        { id: 1, value: [2, 2], answer: '交替使用远近光灯' },
+        { id: 6, value: [1, 32, 2, 1, 64, 16, 64], answer: '先向左打方向灯，再交替使用远近光灯，再向右打方向灯，最后将方向灯回归原位'},
+        { id: 1, value: [2, 1], answer: '交替使用远近光灯' },
         { id: 8, value: [], answer: '近光灯'},
         { id: 2, value: [], answer: '近光灯'},
-        { id: 9, value: [2, 2], answer: '交替使用远近光灯'},
+        { id: 9, value: [2, 1], answer: '交替使用远近光灯'},
         { id: 5, value: [16], answer: '近关灯，右转向灯'},
         { id: 4, value: [64, 32], answer: '近光灯，左转向灯' }
     ],
     [
         { id: 0, value: [1], answer: '开启近光灯'},
         { id: 5, value: [16], answer: '近关灯，右转向灯'},
-        { id: 9, value: [64, 2, 2], answer: '交替使用远近光灯'},
+        { id: 9, value: [64, 2, 1], answer: '交替使用远近光灯'},
         { id: 7, value: [4, 8], answer: '打开示宽灯，并开启危险报警闪光灯'},
         { id: 3, value: [8, 1, 2], answer: '远光灯'},
-        { id: 6, value: [2, 32, 2, 2, 64, 16, 64], answer: '先向左打方向灯，再交替使用远近光灯，再向右打方向灯，最后将方向灯回归原位'},
+        { id: 6, value: [1, 32, 2, 1, 64, 16, 64], answer: '先向左打方向灯，再交替使用远近光灯，再向右打方向灯，最后将方向灯回归原位'},
         { id: 8, value: [], answer: '近光灯'},
-        { id: 1, value: [2, 2], answer: '交替使用远近光灯' },
+        { id: 1, value: [2, 1], answer: '交替使用远近光灯' },
         { id: 4, value: [32], answer: '近光灯，左转向灯' },
         { id: 2, value: [64], answer: '近光灯'}
     ]
@@ -178,7 +178,7 @@ var Exam = {
         var paper = this.papers[this.index];
         var step = this.step;
         // 答题完毕
-        if (!paper) {
+        if (!paper[step]) {
             this.success();
             return this;
         }
@@ -196,6 +196,7 @@ var Exam = {
         this.socket.emit('action', {id: this.id, action: key});
         this.answer = this.answer || [];
         this.answer.push(this.map[key]);
+        console.log(this.answer);
         return this;
     },
     //核对答案
@@ -232,35 +233,29 @@ _.extend(Exam, Backbone.Events, {
     id: id
 });
 Exam.initialize();
-socket.on('connect success', function () {
-    //Exam.load(_.random(0, 4)).start();
-});
-socket.on('signed', function () {
-    alert('该宝马是别人的啦！！');
-});
 
-$('.page2 .btn').click(function (e) {
-    var val = this.dataset.value;
-    var me = $(this);
-    var children = me.siblings().find('i');
-
-    children.removeClass('active');
-    me.find('i')[me.find('i').hasClass('active')? 'removeClass' : 'addClass']('active');
-
-    Exam.operation(val);
-
-});
 Exam.on('examstart', function () {
     noty({
-        text: '开始考试',
+        text: '你已经上车！',
         type: 'success',
         dismissQueue: true,
         layout: 'bottomRight',
         theme: 'defaultTheme',
         maxVisible: 10,
-        timeout: 1000
+        timeout: 2000
     });
 });
+socket.on('signed', function () {
+    noty({
+        text: '该车已经有人操作！！',
+        type: 'information',
+        dismissQueue: true,
+        layout: 'bottomRight',
+        theme: 'defaultTheme',
+        maxVisible: 10
+    });
+});
+
 Exam.on('question', function (question) {
     if (Exam.freedom) {
         noty({
@@ -287,7 +282,7 @@ Exam.on('fail', function (question) {
 });
 $('#btn-1').click(function () {
     $('.page2').css({top: 0});
-    Exam.load(_.random(0, 4)).start();
+    Exam.load(_.random(0)).start();
 });
 $('#btn-2').click(function () {
     Exam.freedom = true;
@@ -295,4 +290,64 @@ $('#btn-2').click(function () {
     Exam.load(_.random(0, 4)).start();
 });
 
+
+$('.btn_emergency').click(function (e) {
+    var val = this.dataset.value;
+    var icon = $(this).find('i');
+
+    icon[ icon.hasClass('active')? 'removeClass' : 'addClass']('active');
+
+    Exam.operation(val);
+
+});
+
+$('.btns2 .btn').click(function (e) {
+    var val = this.dataset.value;
+    var me = $(this);
+    var icons = me.siblings().find('i');
+    if( me.find('i').hasClass('active')){
+        return;
+    }
+
+    icons.removeClass('active');
+    me.find('i')[me.find('i').hasClass('active')? 'removeClass' : 'addClass']('active');
+
+    if(me.index() == 0 || me.index() == 1){
+        Exam.operation('reset');
+    }
+    Exam.operation(val);
+
+});
+
+
+$('.btns1 .btn').click(function (e) {
+    var val = this.dataset.value;
+    var me = $(this);
+    var icons = me.siblings().find('i');
+    var active = me.find('i').hasClass('active');
+
+    if(active && val === 'widthlamp' && val === 'closelamp'){
+        return false;
+    }
+
+    if(!active){
+
+        icons.removeClass('active');
+        me.find('i').addClass('active');
+    }else{
+
+      if(val == 'highlight'){
+            val = 'headlight';
+
+            me.attr('data-value', val).html('<i class="active"></i>近光灯');
+        }else if(val == 'headlight'){
+            val = 'highlight';
+            me.attr('data-value', val).html('<i class="active"></i>远光灯');
+        }  
+    }
+
+
+    Exam.operation(val);
+
+});
 
