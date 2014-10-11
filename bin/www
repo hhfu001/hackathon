@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 var debug = require('debug')('hackathon');
 var app = require('../app');
+var _ = require('underscore');
 
 
 app.set('port', process.env.PORT || 3000);
@@ -10,22 +11,30 @@ var server = app.listen(app.get('port'), function () {
 });
 var io = require('socket.io')(server);
 io.on('connection', function (socket) {
-    socket.emit('news', { id: socket.id });
-    socket.on('device connect', function (data) {
-        var sockets = this.nsp.sockets;
-        for (var i = 0, l = sockets.length; i < l; i++) {
-            if (sockets[i].id == data.id) {
-                sockets[i].emit('device connect');
-            }
+    var sockets = this.sockets;
+    socket.emit('news');
+    socket.on('screen', function () {
+        this.signed = false;
+        this.emit('reply', {id: socket.id});
+    });
+    socket.on('device', function (data) {
+        var screenSocket = _.find(sockets, function (s) {
+            return s.id == data.id
+        });
+        if (screenSocket && !screenSocket.signed) {
+            screenSocket.signed = true;
+            this.emit('connect success');
+            screenSocket.emit('connect success');
+        } else {
+            this.emit('signed');
         }
     });
     socket.on('action', function (data) {
-        var sockets = this.nsp.sockets;
-        for (var i = 0, l = sockets.length; i < l; i++) {
-            if (sockets[i].id == data.id) {
-                sockets[i].emit('action', data.action);
-                console.log(data.action);
-            }
+        var screenSocket = _.find(sockets, function (s) {
+            return s.id == data.id
+        });
+        if (screenSocket) {
+            screenSocket.emit('action', data.action);
         }
-    })
+    });
 });

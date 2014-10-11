@@ -2,8 +2,7 @@ var id = window.location.hash.substr(1);
 var socket = io.connect('http://10.5.16.177');
 socket.on('news', function (data) {
     socket.emit('device connect', {id: id});
-})
-;
+});
 var voice = new Howl({
     src: '/light-action.mp3',
     sprite: {
@@ -233,17 +232,11 @@ Exam.initialize();
 Exam.on('fail', function (action) {
     alert(action.name);
 });
-function random(target) {
-    var rtn;
-    if ($.isArray(target)) {
-        rtn = target[random(target.length) - 1];
-    } else if (target) {
-        rtn = Math.ceil(Math.random() * target);
-    }
-    return rtn;
-}
-$('#btn-1').click(function () {
-    Exam.load(random(4)).start();
+socket.on('connect success', function () {
+    Exam.load(_.random(0, 4)).start();
+});
+socket.on('signed', function () {
+    alert('该宝马是别人的啦！！');
 });
 $('.btn').click(function (e) {
     Exam.operation(this.dataset.value);
