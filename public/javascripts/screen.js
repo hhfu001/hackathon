@@ -7,7 +7,6 @@ socket.on('usable', function (data) {
     $('.qrcode')
         .empty()
         .qrcode(href + '#' + data.id).show();
-        console.log(href + '#' + data.id);
 });
 socket.on('connect success', function () {
     $('.qrcode').hide();
