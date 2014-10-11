@@ -1,12 +1,12 @@
 $(function() {
 
-	var timer = null;
+	//var timer = null;
 	var delay = 500;
 	var $lights = $('#lights');
 	var $signal = $('#signal');
 
 	function clean() {
-		if (timer) clearTimeout(timer);
+		//if (timer) clearTimeout(timer);
 	}
 
 	var Lights = {
@@ -26,61 +26,40 @@ $(function() {
 			$lights[$lights.hasClass('highlight') ? 'removeClass' : 'addClass']('highlight');
 		},
 
-		left: function() {
-			clean();
-			var self = this;
-
-			//
-			$signal.removeClass('right');
-
-			timer = setTimeout(function() {
-				$signal[$signal.hasClass('left') ? 'removeClass' : 'addClass']('left');
-
-				self.left();
-			}, delay);
-
-		},
-
-		right: function() {
-			var self = this;
-			clean();
-
-			//
-			$signal.removeClass('left');
-
-			timer = setTimeout(function() {
-				$signal[$signal.hasClass('right') ? 'removeClass' : 'addClass']('right');
-
-				self.right();
-			}, delay);
-
-		},
 
 		widthlamp: function() {
 			$lights.removeClass('headlight highLight');
 
 			$lights[$lights.hasClass('widthlamp') ? 'removeClass' : 'addClass']('widthlamp');
 		},
+
+		left: function() {
+			//
+			this.reset();
+
+			$signal[$signal.hasClass('left') ? 'removeClass' : 'addClass']('left');
+
+		},
+
+		right: function() {
+			//
+			this.reset();
+
+			$signal[$signal.hasClass('right') ? 'removeClass' : 'addClass']('right');
+
+
+		},
 		
 		emergency: function() {
-			var self = this;
-			clean();
+			this.reset();
 
-			$signal.removeClass('left right');
-
-			timer = setTimeout(function() {
-				$signal[$signal.hasClass('emergency') ? 'removeClass' : 'addClass']('emergency');
-
-				self.emergency();
-			}, delay);
-
+			$signal[$signal.hasClass('emergency') ? 'removeClass' : 'addClass']('emergency');
 
 		},
 
 		reset: function() {
-			clean();
 
-			$signal.removeClass('left right');
+			$signal.removeClass('left right emergency');
 
 		}
 	};

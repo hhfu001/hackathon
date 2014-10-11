@@ -1,7 +1,7 @@
 var id = window.location.hash.substr(1);
-var socket = io.connect('http://10.5.16.17');
-socket.on('news', function () {
-    socket.emit('device', {id: id});
+var socket = io.connect('http://10.5.16.177');
+socket.on('news', function (data) {
+    socket.emit('device connect', {id: id});
 });
 var voice = new Howl({
     src: '/light-action.mp3',
