@@ -1,5 +1,5 @@
 var id = window.location.hash.substr(1);
-var socket = io.connect('http://10.5.16.17');
+var socket = io.connect('http://10.5.16.177');
 socket.on('news', function (data) {
     socket.emit('device', {id: id});
 });
@@ -135,7 +135,7 @@ var papers = [
     ]
 ];
 var Exam = {
-    freedom: true,
+    freedom: false,
     initialize: function () {
         var model = this;
         this.on('next', this.next);
@@ -240,7 +240,15 @@ socket.on('signed', function () {
 });
 
 $('.page2 .btn').click(function (e) {
-    Exam.operation(this.dataset.value);
+    var val = this.dataset.value;
+    var me = $(this);
+    var children = me.siblings().find('i');
+
+    children.removeClass('active');
+    me.find('i')[me.find('i').hasClass('active')? 'removeClass' : 'addClass']('active');
+
+    Exam.operation(val);
+
 });
 Exam.on('examstart', function () {
     noty({
@@ -278,6 +286,11 @@ Exam.on('fail', function (question) {
     });
 });
 $('#btn-1').click(function () {
+    $('.page2').css({top: 0});
+    Exam.load(_.random(0, 4)).start();
+});
+$('#btn-2').click(function () {
+    Exam.freedom = true;
     $('.page2').css({top: 0});
     Exam.load(_.random(0, 4)).start();
 });

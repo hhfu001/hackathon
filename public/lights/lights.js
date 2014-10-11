@@ -13,17 +13,21 @@ $(function() {
 
 		headlight: function() {
 			//和远光灯互斥
-			$lights.removeClass('highlight');
+			$lights.removeClass('highlight widthlamp');
 
 			$lights[$lights.hasClass('headlight') ? 'removeClass' : 'addClass']('headlight');
 
 		},
 
 		highlight: function() {
-			//和近光灯互斥
-			$lights.removeClass('headlight');
+			$lights.removeClass('widthlamp');
 
-			$lights[$lights.hasClass('highlight') ? 'removeClass' : 'addClass']('highlight');
+			if($lights.hasClass('highlight')){
+				$lights.removeClass('highlight').addClass('headlight');
+			}else{
+				$lights.addClass('highlight').removeClass('headlight');
+			}
+
 		},
 
 
@@ -51,7 +55,7 @@ $(function() {
 		},
 		
 		emergency: function() {
-			this.reset();
+			//this.reset();
 
 			$signal[$signal.hasClass('emergency') ? 'removeClass' : 'addClass']('emergency');
 
@@ -59,8 +63,13 @@ $(function() {
 
 		reset: function() {
 
-			$signal.removeClass('left right emergency');
+			$signal.removeClass('left right');
 
+		},
+		
+		clean: function(){
+			this.reset();
+			$lights.removeClass('widthlamp headlight highlight');
 		}
 	};
 

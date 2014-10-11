@@ -494,26 +494,26 @@ body{ position: relative;}
 .page2 .btns3{ float: left; width: 120px;}
 
 .page2 .btn_headlight i{ background-position: 0 -109px;}
-.page2 .btn_headlight_active i{ background-position: 0 -9px;}
+.page2 .btn_headlight .active{ background-position: 0 -9px;}
 
 
 .page2 .btn_highlight i{ background-position: -63px -109px;}
-.page2 .btn_highlight_active i{ background-position: -63px -9px;}
+.page2 .btn_highlight .active{ background-position: -63px -9px;}
 
 .page2 .btn_widthlamp i{ width: 70px; background-position: -116px -109px;}
-.page2 .btn_widthlamp_active i{ width: 70px; background-position: -116px -9px;}
+.page2 .btn_widthlamp .active{ width: 70px; background-position: -116px -9px;}
 
 .page2 .btn_right i{ background-position: -52px -157px;}
-.page2 .btn_right_active i{ background-position: -52px -57px;}
+.page2 .btn_right .active{ background-position: -52px -57px;}
 
 .page2 .btn_left i{ background-position: 0 -157px;}
-.page2 .btn_left_active i{ background-position: 0 -57px;}
+.page2 .btn_left .active{ background-position: 0 -57px;}
 
 .page2 .btn_reset i{ margin-top: 10px; background:#ccc; height: 10px;}
-.page2 .btn_reset_active i{ margin-top: 10px; background:#f60; height: 10px;}
+.page2 .btn_reset .active{ margin-top: 10px; background:#f60; height: 10px;}
 
 .page2 .btn_emergency i{ background-position: -115px -157px;}
-.page2 .btn_emergency_active i{ background-position: -115px -57px;}
+.page2 .btn_emergency .active{ background-position: -115px -57px;}
 
 .page2 .btns1{ border-bottom: 1px solid #eee; margin-bottom: 10px;}
 .page2 .btns2{ border-right: 1px solid #eee; }
