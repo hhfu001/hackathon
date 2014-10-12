@@ -284,37 +284,43 @@ Exam.on('fail', function (question) {
         maxVisible: 10
     });
 });
-$('#btn-1').click(function () {
-    $('.page2').css({top: 0});
+
+$('#btn-1').click(function() {
+    $('.page2').css({
+        left: 0
+    });
     Exam.load(_.random(0, 4)).start();
 });
-$('#btn-2').click(function () {
+
+$('#btn-2').click(function() {
     Exam.freedom = true;
-    $('.page2').css({top: 0});
+    $('.page2').css({
+        left: 0
+    });
     Exam.load(_.random(0, 4)).start();
 });
 
 
-$('.btn_emergency').click(function (e) {
+$('.btn_emergency').click(function(e) {
     var val = this.dataset.value;
     var icon = $(this).find('i');
 
-    icon[ icon.hasClass('active')? 'removeClass' : 'addClass']('active');
+    icon[icon.hasClass('active') ? 'removeClass' : 'addClass']('active');
 
     Exam.operation(val);
 
 });
 
-$('.btns2 .btn').click(function (e) {
+$('.btns2 .btn').click(function(e) {
     var val = this.dataset.value;
     var me = $(this);
     var icons = me.siblings().find('i');
-    if( me.find('i').hasClass('active')){
+    if (me.find('i').hasClass('active')) {
         return;
     }
 
     icons.removeClass('active');
-    me.find('i')[me.find('i').hasClass('active')? 'removeClass' : 'addClass']('active');
+    me.find('i')[me.find('i').hasClass('active') ? 'removeClass' : 'addClass']('active');
 
     // if(me.index() == 0 || me.index() == 2){
     //     Exam.operation('reset');
@@ -323,34 +329,33 @@ $('.btns2 .btn').click(function (e) {
 
 });
 
-
-$('.btns1 .btn').click(function (e) {
+$('.btns1 .btn').click(function(e) {
     var val = this.dataset.value;
     var me = $(this);
     var icons = me.siblings().find('i');
     var active = me.find('i').hasClass('active');
 
-    if(active && (val === 'widthlamp' || val === 'closelamp')){
+    if (active && (val === 'widthlamp' || val === 'closelamp')) {
         return false;
     }
 
-    if(!active){
+    if (!active) {
 
         icons.removeClass('active');
         me.find('i').addClass('active');
-    }else{
+    } else {
 
-      if(val == 'highlight'){
+        if (val == 'highlight') {
             val = 'headlight';
             me.removeClass('btn_highlight').addClass('btn_headlight');
             me.attr('data-value', val).html('<i class="active"></i>近光灯');
-            
-        }else if(val == 'headlight'){
+
+        } else if (val == 'headlight') {
             val = 'highlight';
 
             me.removeClass('btn_headlight').addClass('btn_highlight');
             me.attr('data-value', val).html('<i class="active"></i>远光灯');
-        }  
+        }
     }
 
 

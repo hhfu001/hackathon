@@ -1,13 +1,7 @@
 $(function() {
 
-	//var timer = null;
-	var delay = 500;
 	var $lights = $('#lights');
 	var $signal = $('#signal');
-
-	function clean() {
-		//if (timer) clearTimeout(timer);
-	}
 
 	var Lights = {
 
@@ -37,10 +31,6 @@ $(function() {
 			$lights[$lights.hasClass('widthlamp') ? 'removeClass' : 'addClass']('widthlamp');
 		},
 
-		closelamp: function(){
-			$lights.removeClass('headlight highlight widthlamp');
-		},
-
 		left: function() {
 			//
 			this.reset();
@@ -68,10 +58,16 @@ $(function() {
 			$signal.removeClass('left right');
 
 		},
+
+		closelamp: function(){
+			
+			$lights.removeClass('headlight highlight widthlamp');
+		},
 		
 		clean: function(){
 			this.reset();
 			this.closelamp();
+			$signal.removeClass('emergency');
 		}
 	};
 

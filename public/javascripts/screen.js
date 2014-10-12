@@ -11,8 +11,9 @@ socket.on('usable', function (data) {
 });
 
 socket.on('connect success', function () {
-	Lights.clean();
+	// console.log('connect success');
     $('.qrcode').hide();
+	Lights.clean();
 });
 
 socket.on('action', function (data) {

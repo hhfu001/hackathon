@@ -490,7 +490,7 @@ body{ position: relative;}
 
 
 
-.page2{ top: -9999px; text-align: left; transition: top 1s; z-index: 2;}
+.page2{ left: -999px; text-align: left; transition: top 1s; z-index: 2;}
 .page2 .btn{ display: inline-block; margin-bottom: 10px; padding: 3px 10px; background:none; color: #444; border-radius: 5px; color: #444;}
 
 .page2 .btn i{ display: block; margin: 0 auto 10px; width: 50px; height: 35px; background:url('/images/ico.png') 0 0 no-repeat; background-size: 200px;}
