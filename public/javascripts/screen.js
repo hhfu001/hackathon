@@ -16,5 +16,6 @@ socket.on('connect success', function () {
 });
 
 socket.on('action', function (data) {
+	//console.log(data);
     Lights[data]();
 });

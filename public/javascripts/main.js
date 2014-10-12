@@ -330,7 +330,7 @@ $('.btns1 .btn').click(function (e) {
     var icons = me.siblings().find('i');
     var active = me.find('i').hasClass('active');
 
-    if(active && val === 'widthlamp' && val === 'closelamp'){
+    if(active && (val === 'widthlamp' || val === 'closelamp')){
         return false;
     }
 

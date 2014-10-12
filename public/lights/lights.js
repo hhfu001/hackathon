@@ -32,13 +32,13 @@ $(function() {
 
 
 		widthlamp: function() {
-			$lights.removeClass('headlight highLight');
+			$lights.removeClass('headlight highlight');
 
 			$lights[$lights.hasClass('widthlamp') ? 'removeClass' : 'addClass']('widthlamp');
 		},
 
 		closelamp: function(){
-			$lights.removeClass('headlight highLight widthlamp');
+			$lights.removeClass('headlight highlight widthlamp');
 		},
 
 		left: function() {
@@ -71,7 +71,7 @@ $(function() {
 		
 		clean: function(){
 			this.reset();
-			$lights.removeClass('widthlamp headlight highlight');
+			this.closelamp();
 		}
 	};
 
