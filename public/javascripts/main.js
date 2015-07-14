@@ -1,5 +1,5 @@
 var id = window.location.hash.substr(1);
-var socket = io.connect('http://10.5.16.177');
+var socket = io.connect('http://192.168.1.110');
 socket.on('news', function (data) {
     socket.emit('device', {id: id});
 });

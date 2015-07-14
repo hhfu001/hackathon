@@ -1,5 +1,5 @@
-var href = 'http://10.5.16.177:3000/control.html';
-var socket = io.connect('http://10.5.16.177');
+var href = 'http://192.168.1.110:3000/control.html';
+var socket = io.connect('http://192.168.1.110');
 socket.on('news', function () {
     socket.emit('screen');
 });
